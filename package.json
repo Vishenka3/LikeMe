@@ -1,0 +1,20 @@
+{
+  "name": "likeme",
+  "version": "1.0.0",
+  "description": "Little Life Blog",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "author": "Vishenka",
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^3.6.0",
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "@types/express": "^4.16.0",
+    "nodemon": "^1.17.5"
+  }
+}
