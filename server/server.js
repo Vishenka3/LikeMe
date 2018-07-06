@@ -3,6 +3,7 @@ import express from 'express';
 import logger from 'morgan';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
+import cors from 'cors';
 import http from 'http';
 
 import routes from './routes/routes';
@@ -21,6 +22,9 @@ app.set('view engine', 'pug');
 
 // serve static files from 'public'
 app.use(express.static(path.join(__dirname, './public')));
+
+//allowing cross domain requests
+app.use(cors());
 
 // use routes
 app.use('/', routes);
@@ -87,7 +91,7 @@ function onListening() {
         typeof addr === 'string' ? addr : addr.port
     }`;
     console.log(`Server is listening on ${bind}`);
-    console.log(`Visit: http://localhost:${addr.port}/api/customers`);
+    console.log(`Visit: http://localhost:${addr.port}`);
 }
 
 server.on('error', onError);
